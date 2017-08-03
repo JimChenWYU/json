@@ -472,7 +472,7 @@
             </fieldset>-->
            
             <input type="button" class="InputButton" value="Generate schema" id="GenerateSchema">
-            <input type="button" class="InputButton" value="Reset input" id="ResetInputForm">
+            <input type="button" class="InputButton" style="display: none;" value="Reset input" id="ResetInputForm">
           </form>
 
         </div>
@@ -490,6 +490,12 @@
   </div>
 
 </div>
-
+<script type="text/javascript">
+  $(function () {
+      $('#Input').find('fieldset').bind('input change propertychange', function(){  
+          $('#GenerateSchema').trigger('click')
+      });
+  })
+</script>
 
 </body></html>
